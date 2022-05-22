@@ -10,7 +10,6 @@ import requests
 
 #initalize our lists holding watched movies
 unwatched = []
-messages = ["Don't forget the popcorn!", "Make sure to skip the sex scenes!", "Netflix and chill?", "Wow you're really going to watch that?", "Have fun destroying brain cells with that one!"]
 
 def populateMovies(display=False):
     if display:
@@ -87,7 +86,6 @@ def chooseMovie(moveTitle=True) -> str or None:
         line = random_movie.ljust(40)
         f.write(f'{line}{current_time}\n')
     print(f"Movie selected: {random_movie}")
-    print(messages[random.randrange(0, len(messages))])
     return random_movie
 
 #when you're lazy
