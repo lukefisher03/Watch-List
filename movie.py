@@ -40,10 +40,12 @@ def rewriteMovies(populate=False):
             f.write(movie + "\n")
 
 def addMovie():
-    title = input("What is the movie title: ")
+    titles = input("What is the movie title: ")
+    inputted_movies = titles.split(",")
     with open("unwatched.txt", "a") as f:
-        f.write("\n"+title)
-    print(f"Added movie: {title}")
+        for movie in inputted_movies:
+            f.write(movie.strip() + "\n")
+    print(f"Added movie[s]: {titles}")
 
 def removeMovie():
     populateMovies(display=True)
@@ -97,7 +99,6 @@ print("3. List unwatched movies")
 print("4. List watched movies")
 print("5. Add movie")
 print("6. Remove movie")
-print("7. Exit")
 
 user_choice = int(input("\n\n:").strip())
 
@@ -114,10 +115,11 @@ elif user_choice == 5:
     addMovie()
 elif user_choice == 6:
     removeMovie()
-elif user_choice == 7:
-    print("Hasta la vista, baby!")
-    req = requests.get("https://api.chucknorris.io/jokes/random")
-    response = req.json()
-    print(f"A chuck norris joke for ya on the way out!\n\t{response['value']}")
 else:
     print("You did not enter valid input!")
+
+
+print("\n\nHasta la vista, baby!")
+req = requests.get("https://api.chucknorris.io/jokes/random")
+response = req.json()
+print(f"A chuck norris joke for ya on the way out!\n\t{response['value']}")
