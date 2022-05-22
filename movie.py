@@ -91,8 +91,8 @@ def chooseMovie(moveTitle=True) -> str or None:
 #when you're lazy
 print("Welcome to your favorite movie manager!\n")
 print("Please select an option: ")
-print("1. Select Random Movie (and add to watched list)")
-print("2. Select Random Movie (without adding to watched list)")
+print("1. Select Random Movie (Remove from watched list)")
+print("2. Select Random Movie (Keep on watched list)")
 print("3. List unwatched movies")
 print("4. List watched movies")
 print("5. Add movie")
